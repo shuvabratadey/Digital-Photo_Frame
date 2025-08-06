@@ -1,7 +1,7 @@
 # ESP32 Digital Photo Frame with Health & Weather Monitoring
 
-![Project Image](./images/photo-frame.jpg)\
-*(Add your actual project photo here)*
+</br><img src="https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/pictures/IMG_1.jpg" width="400"/>
+<img src="https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/pictures/IMG_4.jpg" width="400"/>
 
 ## 📌 Overview
 
@@ -10,9 +10,9 @@ This project is a **Wi-Fi-enabled Digital Photo Frame** built using
 to the device via `esp32.local` and **upload or remove images** that
 will be displayed as a slideshow.
 
-Additionally, it features:\
+Additionally, it features:
 - 🌡️ **Weather Mode:** Supports an **I2C-based BME280 sensor** to
-display temperature and humidity with a gauge-style UI.\
+display temperature and humidity with a gauge-style UI.
 - ❤️ **Health Mode:** Supports a **MAX30102 pulse oximeter sensor** to
 measure and display heart rate in real time.
 
@@ -20,25 +20,25 @@ measure and display heart rate in real time.
 
 ## ✨ Features
 
--   📷 **Digital Photo Frame:** Upload and remove images over Wi-Fi\
--   🌐 **Web Interface:** Access via `esp32.local` for image management\
+-   📷 **Digital Photo Frame:** Upload and remove images over Wi-Fi
+-   🌐 **Web Interface:** Access via `esp32.local` for image management
 -   🌡️ **Weather Monitoring:** Real-time temperature and humidity from
-    BME280\
+    BME280
 -   ❤️ **Health Monitoring:** Real-time heart rate display from
-    MAX30102\
+    MAX30102
 -   🎨 **Gauge-like UI:** Smooth graphical display for weather and heart
-    rate\
--   🔌 **I2C Sensor Interface:** Easily connect supported sensors\
+    rate
+-   🔌 **I2C Sensor Interface:** Easily connect supported sensors
 -   ⚡ **Low Power Mode:** Optimized display and Wi-Fi handling
 
 ------------------------------------------------------------------------
 
 ## 🛠️ Hardware Requirements
 
--   ESP32 Development Board\
--   1.8" ST7735 TFT Display (128x160)\
--   BME280 Temperature & Humidity Sensor *(optional)*\
--   MAX30102 Pulse Oximeter Sensor *(optional)*\
+-   ESP32 Development Board
+-   1.8" ST7735 TFT Display (128x160)
+-   BME280 Temperature & Humidity Sensor *(optional)*
+-   MAX30102 Pulse Oximeter Sensor *(optional)*
 -   Power Supply (5V via USB or battery pack)
 
 ------------------------------------------------------------------------
@@ -70,9 +70,9 @@ measure and display heart rate in real time.
     cd esp32-digital-photo-frame
     ```
 
-2.  Open with **PlatformIO** or **Arduino IDE**\
+2.  Open with **PlatformIO** or **Arduino IDE**
 
-3.  Update **Wi-Fi credentials** in `config.h`\
+3.  Update **Wi-Fi credentials** in `config.h`
 
 4.  Upload the code to ESP32
 
@@ -80,7 +80,7 @@ measure and display heart rate in real time.
 
 ### 2️⃣ Using the Web Interface
 
--   After boot, connect your device to the same Wi-Fi network\
+-   After boot, connect your device to the same Wi-Fi network
 
 -   Open a browser and go to:
 
@@ -93,7 +93,7 @@ measure and display heart rate in real time.
 ### 3️⃣ Sensor Modes
 
 -   **Weather Mode:** Connect a **BME280** sensor via I2C to see live
-    temperature and humidity readings\
+    temperature and humidity readings
 -   **Health Mode:** Connect a **MAX30102** sensor to measure and
     display heart rate
 
@@ -119,9 +119,9 @@ measure and display heart rate in real time.
 
 ## 🧩 Future Enhancements
 
--   Add SpO₂ display for MAX30102\
--   Cloud sync for photo uploads\
--   Support for more display sizes\
+-   Add SpO₂ display for MAX30102
+-   Cloud sync for photo uploads
+-   Support for more display sizes
 -   Battery status monitoring
 
 ------------------------------------------------------------------------
