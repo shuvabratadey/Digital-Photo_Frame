@@ -125,7 +125,3 @@ measure and display heart rate in real time.
 -   Battery status monitoring
 
 ------------------------------------------------------------------------
-
-## 📝 License
-
-This project is licensed under the MIT License.
