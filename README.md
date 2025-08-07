@@ -103,19 +103,30 @@ measure and display heart rate in real time.
 
 ### 🖼️ Digital Photo Frame
 
-![Photo Frame Mode](./images/photo-frame-display.jpg)
+
+![Photo Frame Mode](https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/pictures/Digital_Photo_Frame.png)
 
 ### 🌡️ Weather Monitoring
 
-![Weather Mode](./images/weather-mode.jpg)
+
+
+https://github.com/user-attachments/assets/a6aec441-a87f-4112-b910-02521dc4f6c6
+
+
 
 ### ❤️ Health Monitoring
-
-![Health Mode](./images/health-mode.jpg)
-
-*(Add more screenshots and demo videos here)*
-
-------------------------------------------------------------------------
+<div align="center">
+<table>
+  <tr>
+    <td>
+      <video autoplay muted loop src="https://github.com/user-attachments/assets/08b8649f-e81c-403b-ba0d-ddd3171b3d4c"></video>
+    </td>
+    <td>
+    <img src="https://github.com/shuvabratadey/esp32-Smart-Watch/blob/main/pictures/Heart_Rate_App.jpg?raw=true" width="300"/>
+    </td>
+  </tr>
+</table>
+</div>
 
 ## 🧩 Future Enhancements
 
