@@ -115,6 +115,7 @@ https://github.com/user-attachments/assets/a6aec441-a87f-4112-b910-02521dc4f6c6
 
 
 ### ❤️ Health Monitoring
+<b>Download the [Pulse_Oximeter.apk](https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/Others/Pulse_Oximeter.apk) to view your heart rate on your mobile device</b>
 <div align="center">
 <table>
   <tr>
