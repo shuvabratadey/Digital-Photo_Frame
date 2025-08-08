@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Upload, Resize & Download</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .frame {
+      width: 161px;
+      height: 130px;
+      border: 2px dashed #666;
+      position: relative;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      margin-bottom: 10px;
+    }
+
+    .resizable {
+      position: absolute;
+      cursor: move;
+    }
+
+    .resizable img {
+      max-width: none;
+      max-height: none;
+      user-select: none;
+    }
+
+    .resizer {
+      width: 10px;
+      height: 10px;
+      background: #000;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      cursor: se-resize;
+    }
+
+    #downloadBtn {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Upload, Resize JPG, and Download</h2>
+  <input type="file" accept="image/jpeg" id="imageInput">
+  <div class="frame" id="frame"></div>
+  <button id="downloadBtn">Download Resized Image</button>
+
+  <script>
+    const imageInput = document.getElementById('imageInput');
+    const frame = document.getElementById('frame');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    let currentImageContainer = null;
+
+    imageInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file || !file.type.startsWith('image/jpeg')) {
+        alert("Please upload a JPG image.");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        frame.innerHTML = '';
+        currentImageContainer = document.createElement('div');
+        currentImageContainer.className = 'resizable';
+        currentImageContainer.style.top = '0px';
+        currentImageContainer.style.left = '0px';
+        currentImageContainer.style.width = '161px';
+        currentImageContainer.style.height = '130px';
+
+        const img = document.createElement('img');
+        img.src = event.target.result;
+        img.style.width = '100%';
+        img.style.height = '100%';
+
+        const resizer = document.createElement('div');
+        resizer.className = 'resizer';
+
+        currentImageContainer.appendChild(img);
+        currentImageContainer.appendChild(resizer);
+        frame.appendChild(currentImageContainer);
+
+        makeResizable(currentImageContainer, resizer);
+        makeDraggable(currentImageContainer);
+      };
+
+      reader.readAsDataURL(file);
+    });
+
+    function makeResizable(element, resizer) {
+      resizer.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        window.addEventListener('mousemove', resize);
+        window.addEventListener('mouseup', stopResize);
+
+        function resize(e) {
+          const rect = frame.getBoundingClientRect();
+          const width = Math.min(e.clientX - element.offsetLeft - rect.left, frame.clientWidth - element.offsetLeft);
+          const height = Math.min(e.clientY - element.offsetTop - rect.top, frame.clientHeight - element.offsetTop);
+          element.style.width = width + 'px';
+          element.style.height = height + 'px';
+        }
+
+        function stopResize() {
+          window.removeEventListener('mousemove', resize);
+          window.removeEventListener('mouseup', stopResize);
+        }
+      });
+    }
+
+    function makeDraggable(element) {
+      element.addEventListener('mousedown', (e) => {
+        if (e.target.classList.contains('resizer')) return;
+
+        const offsetX = e.clientX - element.offsetLeft;
+        const offsetY = e.clientY - element.offsetTop;
+
+        function drag(e) {
+          const x = Math.min(Math.max(0, e.clientX - offsetX), frame.clientWidth - element.offsetWidth);
+          const y = Math.min(Math.max(0, e.clientY - offsetY), frame.clientHeight - element.offsetHeight);
+          element.style.left = x + 'px';
+          element.style.top = y + 'px';
+        }
+
+        window.addEventListener('mousemove', drag);
+        window.addEventListener('mouseup', () => {
+          window.removeEventListener('mousemove', drag);
+        }, { once: true });
+      });
+    }
+
+    downloadBtn.addEventListener('click', () => {
+      if (!currentImageContainer) {
+        alert("Upload and position an image first.");
+        return;
+      }
+
+      const canvas = document.createElement('canvas');
+      canvas.width = 161;
+      canvas.height = 130;
+      const ctx = canvas.getContext('2d');
+
+      const img = currentImageContainer.querySelector('img');
+      const imgElement = new Image();
+      imgElement.onload = () => {
+        const frameRect = frame.getBoundingClientRect();
+        const containerRect = currentImageContainer.getBoundingClientRect();
+
+        const offsetX = containerRect.left - frameRect.left;
+        const offsetY = containerRect.top - frameRect.top;
+        const drawWidth = currentImageContainer.offsetWidth;
+        const drawHeight = currentImageContainer.offsetHeight;
+
+        ctx.drawImage(imgElement, 0, 0, imgElement.width, imgElement.height,
+                      offsetX, offsetY, drawWidth, drawHeight);
+
+        const dataUrl = canvas.toDataURL('image/jpeg');
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'resized-image.jpg';
+        link.click();
+      };
+      imgElement.src = img.src;
+    });
+  </script>
+</body>
+</html>
