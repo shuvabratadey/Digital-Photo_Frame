@@ -40,23 +40,22 @@ measure and display heart rate in real time.
 -   BME280 Temperature & Humidity Sensor *(optional)*
 -   MAX30102 Pulse Oximeter Sensor *(optional)*
 -   Power Supply (5V via USB or battery pack)
-
+<img src="https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/Hardware/Connection%20Diagram.png" width="400"/>
 ------------------------------------------------------------------------
 
 ## 📂 Project Structure
 
     📦 ESP32-Digital-Photo-Frame
-     ┣ 📂 src
-     ┃ ┣ main.cpp
-     ┃ ┗ ...
      ┣ 📂 data
-     ┃ ┗ index.html        # Web interface files
-     ┣ 📂 images           # Example images
-     ┣ 📂 include
-     ┣ 📜 platformio.ini   # PlatformIO configuration
-     ┣ 📜 README.md
-     ┗ 📜 LICENSE
-
+     ┃ ┗ 📂 images           # Example images
+     ┣ 📜 ESP32_Digital_Display.ino
+     ┣ 📜 server.ino
+     ┣ 📜 Display.ino
+     ┣ 📜 BME.ino
+     ┣ 📜 Heart_Rate.ino
+     ┣ 📜 Heart_Rate_Image.h
+     ┣ 📜 JPEG_functions.ino
+     ┗ 📜 SPIFFS_functions.ino
 ------------------------------------------------------------------------
 
 ## 🚀 Getting Started
@@ -66,15 +65,13 @@ measure and display heart rate in real time.
 1.  Clone this repository
 
     ``` bash
-    git clone https://github.com/your-username/esp32-digital-photo-frame.git
-    cd esp32-digital-photo-frame
+    git clone https://github.com/shuvabratadey/Digital-Photo_Frame.git
+    cd ESP32_Digital_Display
     ```
 
-2.  Open with **PlatformIO** or **Arduino IDE**
+2.  Open with **Arduino IDE**
 
-3.  Update **Wi-Fi credentials** in `config.h`
-
-4.  Upload the code to ESP32
+3.  Upload the code to ESP32
 
 ------------------------------------------------------------------------
 
@@ -128,6 +125,18 @@ https://github.com/user-attachments/assets/a6aec441-a87f-4112-b910-02521dc4f6c6
   </tr>
 </table>
 </div>
+
+# 3D Models
+
+This repository contains two STL 3D models.  
+Click the links below to preview them directly in GitHub's 3D viewer.
+
+## 📂 Models
+
+- [Model BODY](https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/Hardware/display_body/Digital%20Display-PartBody.stl)  
+- [Model BACK](https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/Hardware/display_body/Digital%20Display-PartLid.stl)  
+
+> 💡 Tip: On GitHub, you can click and drag to rotate, zoom, and pan the 3D models.
 
 ## 🧩 Future Enhancements
 
