@@ -41,8 +41,8 @@ measure and display heart rate in real time.
 -   MAX30102 Pulse Oximeter Sensor *(optional)*
 -   Power Supply (5V via USB or battery pack)
 <img src="https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/Hardware/Connection%20Diagram.png" width="400"/>
-------------------------------------------------------------------------
 
+------------------------------------------------------------------------
 ## 📂 Project Structure
 
     📦 ESP32-Digital-Photo-Frame
