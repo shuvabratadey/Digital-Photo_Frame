@@ -40,7 +40,7 @@ measure and display heart rate in real time.
 -   BME280 Temperature & Humidity Sensor *(optional)*
 -   MAX30102 Pulse Oximeter Sensor *(optional)*
 -   Power Supply (5V via USB or battery pack)
-<img src="https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/Hardware/Connection%20Diagram.png" width="400"/>
+<img src="https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/Hardware/Connection%20Diagram.png" width="800"/>
 
 ------------------------------------------------------------------------
 ## 📂 Project Structure
