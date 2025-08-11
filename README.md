@@ -76,12 +76,12 @@ measure and display heart rate in real time.
 ------------------------------------------------------------------------
 
 ### 2️⃣ Using the Web Interface
-
 -   After boot, connect your device to the same Wi-Fi network
 
 -   Open a browser and go to:
 
         http://esp32.local
+<img src="https://github.com/shuvabratadey/Digital-Photo_Frame/blob/main/pictures/web_interface.png" width="400"/>
 
 -   Upload or remove images easily via the UI
 
